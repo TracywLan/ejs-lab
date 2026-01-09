@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= categoryName %> - <%= RESTAURANT.name %></title>
+</head>
+<body>
+  <h1><%= categoryName %></h1>
+  
+  <% if (menuItems.length > 0) { %>
+    <% menuItems.forEach(item => { %>
+      <div class="menu-item">
+        <div class="name"><%= item.name %></div>
+        <div class="price">$<%= item.price.toFixed(2) %></div>
+        <div class="rating">★<%= '★'.repeat(item.rating-1) %> (<%= item.rating %>/5)</div>
+        <div class="details"><%= item.details %></div>
+      </div>
+    <% }); %>
+  <% } else { %>
+    <div class="no-items">No items available in this category.</div>
+  <% } %>
+  
+  <p><a href="/menu">← Back to Full Menu</a></p>
+</body>
+</html>
