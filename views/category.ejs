@@ -9,7 +9,7 @@
   <% if (menuItems.length > 0) { %>
     <% menuItems.forEach(item => { %>
       <div class="menu-item">
-        <div class="name"><%= item.name %></div>
+        <div class="name"><%= item.name %> <%= item.rating === 5? '⭐' : '' %></div>
         <div class="price">$<%= item.price.toFixed(2) %></div>
         <div class="rating">★<%= '★'.repeat(item.rating-1) %> (<%= item.rating %>/5)</div>
         <div class="details"><%= item.details %></div>
